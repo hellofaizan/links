@@ -32,10 +32,20 @@ const Home = () => {
   const id = dcData?.data?.discord_user?.id
   const avatar = dcData?.data?.discord_user?.avatar
   const name = dcData?.data?.discord_user?.username
-  const biday = data?.Faizan?.birthday
 
   const today = new Date();
-  console.log(biday && biday)
+  let year = today.getFullYear();
+  // Checking if the birthday is today
+  if (today.getMonth == 9 && today.getDate == 13) {
+    year = year + 1;
+  }
+  // Getting date of birth for next year
+  const bday = data?.Faizan?.birthday
+  const birthdate = new Date(year, bday?.month, bday?.day);
+  // Get the number of milliseconds in 1 day
+  const one_day = 1000 * 60 * 60 * 24;
+  // Get the remaining amount of days
+  const remainingDays = Math.ceil((birthdate.getTime() - today.getTime()) / (one_day));
 
   if (isLoading) return <div className='w-screen h-screen flex justify-center items-center'>
     <Image src={"/faizan.png"} width={60} height={60} alt="HelloFaizan Splach Screen Logo"></Image>
@@ -93,10 +103,18 @@ const Home = () => {
             ))}
           </div>
 
-          <div className='grid grid-cols-1 mb-5 md:grid-cols-3 '>
-            <div className='md:col-span-2 space-x-2 font-semibold flex text-black dark:text-white justify-start items-center rounded-lg bg-[#e4e4e4] dark:bg-[#282828] shadow-md overflow-hidden p-10'>
-              <Image className='rounded-full' src={`https://cdn.discordapp.com/avatars/${id}/${avatar}`} width={60} height={60} alt="HelloFaizan Logo"></Image>
-              <p>{data && data?.Faizan?.title}</p>
+          <div className='grid mb-5 grid-cols-3 space-x-3'>
+            <Link className='col-span-2 space-x-2 font-semibold flex text-black dark:text-white justify-center items-center rounded-lg bg-[#e4e4e4] dark:bg-[#282828] shadow-md overflow-hidden p-10' href={data?.Faizan?.cards?.card1?.link}>
+            <div>
+              <p className='text-sm'>{data && data?.Faizan?.cards?.card1?.title}</p>
+            </div>
+            </Link>
+            <div className='md:col-span-1 bg-[#3478ccb1] rounded-lg shadow-md flex flex-col justify-center items-center'>
+              <div className='flex justify-center place-items-baseline'>
+                <p className='text-3xl md:text-4xl'>{remainingDays}</p>
+                <p>days</p>
+              </div>
+              <p className='text-xs md:text-sm'>Untill Birthday</p>
             </div>
           </div>
 
@@ -105,7 +123,7 @@ const Home = () => {
           <div className='grid grid-cols-1 mt-5 md:grid-cols-3 gap-2'>
 
             <div className="ytCard col-span-2 shadow-md">
-              <a href={`${data?.Faizan?.youtube}`} className="relative block overflow-hidden rounded-lg bg-[url(https://cdn.discordapp.com/attachments/1065518726855807067/1076462720951521351/2022-12-05_01.png)] bg-cover bg-center bg-no-repeat">
+              <a href={`${data?.Faizan?.youtube}`} className="relative block overflow-hidden rounded-lg bg-[url(https://cdn.discordapp.com/attachments/1065518726855807067/1076462213080043521/2023-01-21_01.png)] bg-cover bg-center bg-no-repeat">
 
                 <div className="relative bg-black bg-opacity-20 p-5 pt-40 text-white">
                   <p className="text-sm font-semibold">I am good at Youtube & Minecraft</p>
