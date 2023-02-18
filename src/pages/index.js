@@ -115,10 +115,10 @@ const Home = () => {
             {/* Two */}
             <div className='md:col-span-1 bg-[#3478ccb1] text-white rounded-lg shadow-md flex flex-col justify-center items-center'>
               <div className='flex justify-center place-items-baseline'>
-                <p className='text-3xl md:text-4xl'>{remainingDays}</p>
+                <p className='text-[20px] md:text-4xl'>{remainingDays}</p>
                 <p>days</p>
               </div>
-              <p className='text-xs md:text-sm'>Untill Birthday</p>
+              <p className='text-[10px] md:text-sm'>Untill Birthday</p>
             </div>
           </div>
 
