@@ -103,13 +103,17 @@ const Home = () => {
             ))}
           </div>
 
+          {/* Card 1 */}
           <div className='grid mb-5 grid-cols-3 space-x-3'>
-            <Link className='col-span-2 space-x-2 font-semibold flex text-black dark:text-white justify-center items-center rounded-lg bg-[#e4e4e4] dark:bg-[#282828] shadow-md overflow-hidden p-10' href={data?.Faizan?.cards?.card1?.link}>
-            <div>
-              <p className='text-sm'>{data && data?.Faizan?.cards?.card1?.title}</p>
-            </div>
+            {/* One */}
+            <Link className='col-span-2 relative space-x-2 font-semibold flex text-black dark:text-white justify-center items-center rounded-lg bg-[#e4e4e4] dark:bg-[#282828] shadow-md overflow-hidden p-10' href={data?.Faizan?.cards?.card1?.link}>
+              <p class="whitespace-nowrap absolute right-2 top-2 rounded-full bg-purple-100 px-2.5 py-0.5 text-[10px] text-purple-700">
+                What&apos;s New
+              </p>
+              <p className='text-sm text-center'>{data && data?.Faizan?.cards?.card1?.title}</p>
             </Link>
-            <div className='md:col-span-1 bg-[#3478ccb1] rounded-lg shadow-md flex flex-col justify-center items-center'>
+            {/* Two */}
+            <div className='md:col-span-1 bg-[#3478ccb1] text-white rounded-lg shadow-md flex flex-col justify-center items-center'>
               <div className='flex justify-center place-items-baseline'>
                 <p className='text-3xl md:text-4xl'>{remainingDays}</p>
                 <p>days</p>
@@ -126,7 +130,7 @@ const Home = () => {
               <a href={`${data?.Faizan?.youtube}`} className="relative block overflow-hidden rounded-lg bg-[url(https://cdn.discordapp.com/attachments/1065518726855807067/1076462213080043521/2023-01-21_01.png)] bg-cover bg-center bg-no-repeat">
 
                 <div className="relative bg-black bg-opacity-20 p-5 pt-40 text-white">
-                  <p className="text-sm font-semibold">I am good at Youtube & Minecraft</p>
+                  <p className="text-sm font-semibold">I am bad at Youtube & Minecraft</p>
                 </div>
               </a>
 
