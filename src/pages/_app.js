@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }) {
         <meta charSet="utf-8" />
         <title>HelloFaizan - Software Enthusiast</title>
         {/* favicon */}
-        <link rel="icon" href="/faizan.png" />
+        <link rel="icon" href="/faizan.png"/>
         <meta name="viewport" content="width=device-width,initial-scale=1" />
         <meta name="theme-color" content="#171717" />
         <meta
@@ -29,7 +29,7 @@ export default function App({ Component, pageProps }) {
         />
         <link rel="apple-touch-icon" href="/faizan.png" />
       </Head>
-            <div className="text-black dark:text-white flex flex-row w-full h-full bg-gradient-to-bl from-white to-[#e0e0e0] dark:from-[#171717] dark:to-[#1c1c1c] min-h-screen">
+            <div className="text-black dark:text-white bg-[#f3f3f3] dark:bg-[#151515] flex flex-row w-full h-full min-h-screen">
               <Component {...pageProps} />
             </div>
     </>
