@@ -32,6 +32,10 @@ const Home = () => {
   const id = dcData?.data?.discord_user?.id
   const avatar = dcData?.data?.discord_user?.avatar
   const name = dcData?.data?.discord_user?.username
+  const biday = data?.Faizan?.birthday
+
+  const today = new Date();
+  console.log(biday && biday)
 
   if (isLoading) return <div className='w-screen h-screen flex justify-center items-center'>
     <Image src={"/faizan.png"} width={60} height={60} alt="HelloFaizan Splach Screen Logo"></Image>
@@ -43,20 +47,10 @@ const Home = () => {
 
   return (
     <>
-      {/* Icons Card */}
-      <div className='absolute bottom-0 left-0 py-2 md:block hidden ml-10 mb-5'>
-        <div className='flex flex-col ml-10 mb-10 space-y-5'>
-          <a href='https://discord.gg/invite/rraBbMQraQ' target="_blank" rel="noreferrer"><i className="bi bi-discord hover:text-blue-500 hover:text-xl"></i></a>
-          <a href='https://youtube.com/hellofaizan' target="_blank" rel="noreferrer"><i className="bi bi-youtube hover:text-red-600 hover:text-xl"></i></a>
-          <a href='https://github.com/hellofaizan' target="_blank" rel="noreferrer"><i className="bi bi-github hover:text-xl"></i></a>
-          <a href='https://www.instagram.com/curiousfaizan/' target="_blank" rel="noreferrer"><i className="bi bi-instagram hover:text-[#ff2bf1] hover:text-xl"></i></a>
-          <a href='https://twitter.com/HelloFaizandev' target="_blank" rel="noreferrer"><i className="bi bi-twitter hover:text-blue-500 hover:text-xl"></i></a>
-        </div>
-      </div>
 
       {/* Main Card */}
       <div className='main w-screen h-auto flex justify-center items-start'>
-        <div className='md:rounded-xl p-5 w-screen md:h-auto flex flex-col bg-white dark:bg-[#151515] md:dark:bg-[#1c1c1c] md:mt-10 md:shadow-lg md:w-2/5'>
+        <div className='md:rounded-xl p-5 w-screen md:h-auto flex flex-col bg-white dark:bg-[#151515] md:dark:bg-[#1c1c1c] md:mt-10 md:mb-10 md:shadow-lg md:w-2/5'>
 
           {/* Profile Card */}
           <div className="top mt-2 justify-center w-full flex flex-col items-center">
@@ -85,7 +79,7 @@ const Home = () => {
                 <span className='text-xs font-mono'>{dcData.data.activities[0].emoji.name} {dcData.data.activities[0].state}</span>
 
               ) : (
-                <span className='text-xs font-mono'>👋 No status available. Am I alive</span>
+                <span className='text-xs font-mono'>👋 No status available. Am I alive?</span>
               )}
             </div>
           </div>
@@ -99,11 +93,32 @@ const Home = () => {
             ))}
           </div>
 
-          <iframe className='rounded-lg h-[200px] md:h-[300px]' allowFullScreen src={`https://www.youtube.com/embed/${data?.Faizan.videoId}`}></iframe>
+          <div className='grid grid-cols-1 mb-5 md:grid-cols-3 '>
+            <div className='md:col-span-2 space-x-2 font-semibold flex text-black dark:text-white justify-start items-center rounded-lg bg-[#e4e4e4] dark:bg-[#282828] shadow-md overflow-hidden p-10'>
+              <Image className='rounded-full' src={`https://cdn.discordapp.com/avatars/${id}/${avatar}`} width={60} height={60} alt="HelloFaizan Logo"></Image>
+              <p>{data && data?.Faizan?.title}</p>
+            </div>
+          </div>
+
+          <iframe className='rounded-lg h-[200px] md:h-[300px] shadow-md' allowFullScreen src={`https://www.youtube.com/embed/${data?.Faizan.videoId}`}></iframe>
+
+          <div className='grid grid-cols-1 mt-5 md:grid-cols-3 gap-2'>
+
+            <div className="ytCard col-span-2 shadow-md">
+              <a href={`${data?.Faizan?.youtube}`} className="relative block overflow-hidden rounded-lg bg-[url(https://cdn.discordapp.com/attachments/1065518726855807067/1076462720951521351/2022-12-05_01.png)] bg-cover bg-center bg-no-repeat">
+
+                <div className="relative bg-black bg-opacity-20 p-5 pt-40 text-white">
+                  <p className="text-sm font-semibold">I am good at Youtube & Minecraft</p>
+                </div>
+              </a>
+
+            </div>
+
+          </div>
         </div>
       </div>
-      </>
-      )
+    </>
+  )
 }
 
-      export default Home
+export default Home
