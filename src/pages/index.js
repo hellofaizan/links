@@ -60,7 +60,7 @@ const Home = () => {
 
       {/* Main Card */}
       <div className='main w-screen h-auto flex justify-center items-start'>
-        <div className='md:rounded-xl p-5 w-screen md:h-auto flex flex-col bg-white dark:bg-[#151515] md:dark:bg-[#1c1c1c] md:mt-10 md:mb-10 md:shadow-lg md:w-2/5'>
+        <div className='md:rounded-xl pt-5 pb-5 pl-2 pr-2 md:p-4 w-screen md:h-auto flex flex-col bg-white dark:bg-[#151515] md:dark:bg-[#1c1c1c] md:mt-10 md:mb-10 md:shadow-lg md:w-2/5'>
 
           {/* Profile Card */}
           <div className="top mt-2 justify-center w-full flex flex-col items-center">
@@ -106,7 +106,7 @@ const Home = () => {
           {/* Card 1 */}
           <div className='grid mb-5 grid-cols-3 space-x-3'>
             {/* One */}
-            <Link className='col-span-2 relative space-x-2 font-semibold flex text-black dark:text-white justify-center items-center rounded-lg bg-[#e4e4e4] dark:bg-[#282828] shadow-md overflow-hidden p-10' href={data?.Faizan?.cards?.card1?.link}>
+            <Link className='col-span-2 relative space-x-2 font-semibold flex text-black dark:text-white justify-center items-center rounded-lg bg-[#e4e4e4] dark:bg-[#282828] shadow-md overflow-hidden pt-10 pb-10 pl-2 pr-2 cursor-pointer' href={data?.Faizan?.cards?.card1?.link}>
               <p class="whitespace-nowrap absolute right-2 top-2 rounded-full bg-purple-100 px-2.5 py-0.5 text-[10px] text-purple-700">
                 What&apos;s New
               </p>
@@ -122,10 +122,12 @@ const Home = () => {
             </div>
           </div>
 
+          {/* IFrame og youtube video */}
           <iframe className='rounded-lg h-[200px] md:h-[300px] shadow-md' allowFullScreen src={`https://www.youtube.com/embed/${data?.Faizan.videoId}`}></iframe>
 
-          <div className='grid grid-cols-1 mt-5 md:grid-cols-3 gap-2'>
-
+          {/* Card 2 */}
+          <div className='grid grid-cols-1 mt-5 md:grid-cols-3 md:gap-2'>
+            {/* YT Card */}
             <div className="ytCard col-span-2 shadow-md">
               <a href={`${data?.Faizan?.youtube}`} className="relative block overflow-hidden rounded-lg bg-[url(https://cdn.discordapp.com/attachments/1065518726855807067/1076462213080043521/2023-01-21_01.png)] bg-cover bg-center bg-no-repeat">
 
@@ -134,6 +136,12 @@ const Home = () => {
                 </div>
               </a>
 
+            </div>
+            <div className='grid grid-cols-2 mt-5 md:mt-0 md:grid-cols-2 justify-center items-center gap-2 rounded-lg'>
+              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center bg-[#29bbff] cursor-pointer' href={``}><div><i className='bi bi-twitter'></i></div></Link>
+              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center bg-[#ff1e1e] cursor-pointer' href={``}><div><i className='bi bi-youtube'></i></div></Link>
+              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center bg-[#2d29ff] cursor-pointer' href={``}><div><i className='bi bi-discord'></i></div></Link>
+              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center instagram cursor-pointer' href={``}><div><i className='bi bi-instagram'></i></div></Link>
             </div>
 
           </div>
