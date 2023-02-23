@@ -138,10 +138,10 @@ const Home = () => {
 
             </div>
             <div className='grid grid-cols-2 mt-5 md:mt-0 md:grid-cols-2 justify-center items-center gap-2 rounded-lg'>
-              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center bg-[#29bbff] cursor-pointer' href={``}><div><i className='bi bi-twitter'></i></div></Link>
-              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center bg-[#ff1e1e] cursor-pointer' href={``}><div><i className='bi bi-youtube'></i></div></Link>
-              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center bg-[#2d29ff] cursor-pointer' href={``}><div><i className='bi bi-discord'></i></div></Link>
-              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center instagram cursor-pointer' href={``}><div><i className='bi bi-instagram'></i></div></Link>
+              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center bg-[#29bbff] cursor-pointer' href={`${data?.Faizan?.cards?.card2?.twitter}`}><div><i className='bi bi-twitter'></i></div></Link>
+              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center bg-[#ff1e1e] cursor-pointer' href={`${data?.Faizan?.cards?.card2?.youtube}`}><div><i className='bi bi-youtube'></i></div></Link>
+              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center bg-[#2d29ff] cursor-pointer' href={`${data?.Faizan?.cards?.card2?.discord}`}><div><i className='bi bi-discord'></i></div></Link>
+              <Link className='rounded-lg text-2xl h-full w-full p-5 flex justify-center items-center instagram cursor-pointer' href={`${data?.Faizan?.cards?.card2?.instagram}`}><div><i className='bi bi-instagram'></i></div></Link>
             </div>
 
           </div>
