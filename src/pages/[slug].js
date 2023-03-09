@@ -6,6 +6,7 @@ import axios from 'axios'
 import Image from 'next/image';
 import dcLogo from '../../public/DC Logoo.gif';
 import Spotify from '@/components/Spotify'
+import Head from 'next/head'
 
 const User = () => {
   const [data, setData] = useState(null);
@@ -75,6 +76,27 @@ const User = () => {
   if (dcData?.success == true && data?.success == true) {
     return (
       <>
+        <Head>
+          <title>{name} | Shareable Links</title>
+          <meta name="description" content={`Shareable Links for Discord, Spotify, and more! of ${name}`} />
+          <meta name="keywords" content="Shareable Links, Discord, Spotify, Github, Twitter, Instagram, Facebook, YouTube" />
+          <meta name="author" content="HelloFaizan" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta property="og:title" content={`${name} | Shareable Links`} />
+          <meta property="og:description" content={`Shareable Links for Discord, Spotify, and more! of ${name}`} />
+          <meta property="og:image" content={data?.data?.cards?.feature?.image} />
+          <meta property="og:url" content={`https://l.hellofaizan.me/${slug}`} />
+          <meta property="og:type" content="website" />
+          <meta property="og:site_name" content="Linka" />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:site" content="@HelloFaizandev" />
+          <meta name="twitter:creator" content="@HelloFaizandev" />
+          <meta name="twitter:title" content={`${name} | Shareable Links`} />
+          <meta name="twitter:description" content={`Shareable Links for Discord, Spotify, and more! of ${name}`} />
+          <meta name="twitter:image" content={data?.data?.cards?.feature?.image} />
+          <link rel="icon" href={data?.data?.image} />
+
+        </Head>
         {/* Main Card */}
         <div className='main w-screen h-auto flex justify-center items-start'>
           <div className='md:rounded-xl pt-5 pb-5 pl-2 pr-2 md:p-4 w-screen md:h-auto flex flex-col bg-white dark:bg-[#151515] md:dark:bg-[#1c1c1c] md:mt-10 md:mb-10 md:shadow-lg md:w-2/5'>

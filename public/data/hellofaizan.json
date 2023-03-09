@@ -1,57 +1,57 @@
 {
     "success": true,
-    "data" : {
+    "data": {
         "videoId": "mY7EbFWRxYQ",
-    "youtube": "https://youtube.com/hellofaizan",
-    "dcServer": "https://discord.gg/invite/rraBbMQraQ",
-    "image": "https://media.discordapp.net/attachments/1065518726855807067/1065543595437850644/DC.gif?width=663&height=663",
-    "birthday": {
-        "month": 9,
-        "day": 13
-    },
-    "discord_id": "890232380265222215",
-    "socials": [
-        {
-            "link": "https://www.instagram.com/curiousfaizan/",
-            "icon": "instagram"
+        "youtube": "https://youtube.com/hellofaizan",
+        "dcServer": "https://discord.gg/invite/rraBbMQraQ",
+        "image": "https://media.discordapp.net/attachments/1065518726855807067/1065543595437850644/DC.gif?width=663&height=663",
+        "birthday": {
+            "month": 9,
+            "day": 13
         },
-        {
-            "link": "https://www.github.com/hellofaizan/",
-            "icon": "github"
+        "discord_id": "890232380265222215",
+        "socials": [
+            {
+                "link": "https://www.instagram.com/curiousfaizan/",
+                "icon": "instagram"
+            },
+            {
+                "link": "https://www.github.com/hellofaizan/",
+                "icon": "github"
+            },
+            {
+                "link": "https://www.twitter.com/hellofaizandev/",
+                "icon": "twitter"
+            },
+            {
+                "link": "https://www.youtube.com/hellofaizan",
+                "icon": "youtube"
+            },
+            {
+                "link": "https://discord.gg/invite/rraBbMQraQ",
+                "icon": "discord"
+            }
+        ],
+        "cards": {
+            "card1": {
+                "title": "Working on new project 🧑‍💻",
+                "link": "https://redo.hellofaizan.me/"
+            },
+            "feature": {
+                "image": "https://cdn.discordapp.com/attachments/1065518726855807067/1076462213080043521/2023-01-21_01.png",
+                "link": "https://redo.hellofaizan.me/",
+                "title": "Working on new project 🧑‍💻"
+            }
         },
-        {
-            "link": "https://www.twitter.com/hellofaizandev/",
-            "icon": "twitter"
-        },
-        {
-            "link": "https://www.youtube.com/hellofaizan",
-            "icon": "youtube"
-        },
-        {
-            "link": "https://discord.gg/invite/rraBbMQraQ",
-            "icon": "discord"
-        }
-    ],
-    "cards": {
-        "card1": {
-            "title": "Working on new project 🧑‍💻",
-            "link": "https://redo.hellofaizan.me/"
-        },
-        "feature": {
-            "image": "https://cdn.discordapp.com/attachments/1065518726855807067/1076462213080043521/2023-01-21_01.png",
-            "link": "https://redo.hellofaizan.me/",
-            "title": "Working on new project 🧑‍💻"
-        }
-    },
-    "tabs": [
-        {
-            "title": "My Portolio Website",
-            "link": "https://hellofaizan.me"
-        },
-        {
-            "title": "My Youtube Channel",
-            "link": "https://youtube.com/hellofaizan"
-        }
-    ]
+        "tabs": [
+            {
+                "title": "My Portolio Website",
+                "link": "https://hellofaizan.me"
+            },
+            {
+                "title": "My Youtube Channel",
+                "link": "https://youtube.com/hellofaizan"
+            }
+        ]
     }
 }
