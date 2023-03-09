@@ -1,5 +1,7 @@
 {
-    "videoId": "mY7EbFWRxYQ",
+    "success": true,
+    "data" : {
+        "videoId": "mY7EbFWRxYQ",
     "youtube": "https://youtube.com/hellofaizan",
     "dcServer": "https://discord.gg/invite/rraBbMQraQ",
     "image": "https://media.discordapp.net/attachments/1065518726855807067/1065543595437850644/DC.gif?width=663&height=663",
@@ -51,4 +53,5 @@
             "link": "https://youtube.com/hellofaizan"
         }
     ]
+    }
 }
