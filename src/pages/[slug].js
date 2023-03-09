@@ -16,7 +16,7 @@ const User = () => {
 
   useEffect(() => {
     setLoading(true);
-    axios.get(`http://localhost:3000/api/${slug}`)
+    axios.get(`/api/${slug}`)
       .then(res => {
         setData(res.data)
         setLoading(false);
