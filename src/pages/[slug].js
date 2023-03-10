@@ -65,7 +65,7 @@ const User = () => {
   if (isLoading) return <div className='w-screen h-screen flex justify-center items-center'>
     <Image src={"/faizan.png"} width={60} height={60} alt="HelloFaizan Splach Screen Logo"></Image></div>
 
-  if (dcData?.success == false || dcData?.error?.code == "user_not_monitored") {
+  if (dcData?.error?.code == "user_not_monitored") {
     return (
       <div className='flex justify-center items-center w-full h-screen text-lg font-sans font-semibold'>
         <p>User not signed up yet. Read <span><Link className='text-yellow-400 hover:scale-[1.05]' href={`/`}>Documentation </Link></span><i className='bi bi-journal-code text-yellow-400'></i></p>
@@ -88,12 +88,6 @@ const User = () => {
           <meta property="og:url" content={`https://l.hellofaizan.me/${slug}`} />
           <meta property="og:type" content="website" />
           <meta property="og:site_name" content="Linka" />
-          <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:site" content="@HelloFaizandev" />
-          <meta name="twitter:creator" content="@HelloFaizandev" />
-          <meta name="twitter:title" content={`${name} | Shareable Links`} />
-          <meta name="twitter:description" content={`Shareable Links for Discord, Spotify, and more! of ${name}`} />
-          <meta name="twitter:image" content={data?.data?.cards?.feature?.image} />
           <link rel="icon" href={data?.data?.image} />
 
         </Head>
@@ -109,11 +103,11 @@ const User = () => {
                 <h1 className='text-3xl font-serif'>{name}</h1>
                 <span className='mb-1'>
                   {/* If else */}
-                  {dcData && dcData.data.activities[0] && dcData.data.discord_status == "dnd" ? (
+                  {dcData && dcData?.data?.discord_status == "dnd" ? (
                     <span className='text-red-600 font-bold text-sm flex items-center justify-center'> <i className="bi bi-dot font-bold"></i>DND</span>
-                  ) : dcData && dcData.data.activities[0] && dcData.data.discord_status == "online" ? (
+                  ) : dcData && dcData?.data?.discord_status == "online" ? (
                     <span className='text-green-500 font-bold text-sm flex items-center justify-center'> <i className="bi bi-dot font-bold"></i>Online</span>
-                  ) : dcData && dcData.data.activities[0] && dcData.data.discord_status == "idle" ? (
+                  ) : dcData && dcData?.data?.discord_status == "idle" ? (
                     <span className='text-yellow-500 font-bold text-sm flex items-center justify-center'> <i className="bi bi-dot font-bold"></i>Idle</span>
                   ) : (
                     <span className='text-gray-500 text-sm flex items-center justify-center'> <i className="bi bi-dot"></i>Offline</span>
