@@ -6,6 +6,7 @@ import axios from 'axios'
 import Image from 'next/image';
 import dcLogo from '../../public/DC Logoo.gif';
 import Spotify from '@/components/Spotify'
+import Online from '@/components/Online'
 import Head from 'next/head'
 
 const User = () => {
@@ -40,9 +41,6 @@ const User = () => {
         setLoading(false);
       });
   }, [dcid]);
-
-  console.log(dcData)
-  console.log(data)
 
   const name = dcData?.data?.discord_user?.username
 
@@ -99,21 +97,9 @@ const User = () => {
             <div className="top mt-3 justify-center w-full flex flex-col items-center">
 
               <Image className='rounded-full md:hover:scale-105' src={data?.data?.image} width={80} height={80} alt="HelloFaizan Logo" placeholder='/faizan.png' priority></Image>
-              <div className='mt-3 flex items-end justify-center'>
+              <div className='mt-3 flex items-center justify-center'>
                 <h1 className='text-3xl font-serif'>{name}</h1>
-                <span className='mb-1'>
-                  {/* If else */}
-                  {dcData && dcData?.data?.discord_status == "dnd" ? (
-                    <span className='text-red-600 font-bold text-sm flex items-center justify-center'> <i className="bi bi-dot font-bold"></i>DND</span>
-                  ) : dcData && dcData?.data?.discord_status == "online" ? (
-                    <span className='text-green-500 font-bold text-sm flex items-center justify-center'> <i className="bi bi-dot font-bold"></i>Online</span>
-                  ) : dcData && dcData?.data?.discord_status == "idle" ? (
-                    <span className='text-yellow-500 font-bold text-sm flex items-center justify-center'> <i className="bi bi-dot font-bold"></i>Idle</span>
-                  ) : (
-                    <span className='text-gray-500 text-sm flex items-center justify-center'> <i className="bi bi-dot"></i>Offline</span>
-                  )
-                  }
-                </span>
+                <Online id={dcid} />
               </div>
             </div>
 
