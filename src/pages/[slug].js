@@ -34,12 +34,15 @@ const User = () => {
   // Data from LanYard API
   useEffect(() => {
     setLoading(true);
-    fetch(`https://api.lanyard.rest/v1/users/${dcid}`)
-      .then((res1) => res1.json())
-      .then((dcData) => {
-        setDcData(dcData);
+    axios.get(`https://api.lanyard.rest/v1/users/${dcid}`)
+      .then((res1) => {
+        setDcData(res1.data);
         setLoading(false);
-      });
+      })
+      .catch((err) => {
+        console.log(err);
+      }
+      );
   }, [dcid]);
 
   const name = dcData?.data?.discord_user?.username
@@ -62,14 +65,6 @@ const User = () => {
 
   if (isLoading) return <div className='w-screen h-screen flex justify-center items-center'>
     <Image src={"/faizan.png"} width={60} height={60} alt="HelloFaizan Splach Screen Logo"></Image></div>
-
-  if (dcData?.error?.code == "user_not_monitored") {
-    return (
-      <div className='flex justify-center items-center w-full h-screen text-lg font-sans font-semibold'>
-        <p>User not signed up yet. Read <span><Link className='text-yellow-400 hover:scale-[1.05]' href={`/`}>Documentation </Link></span><i className='bi bi-journal-code text-yellow-400'></i></p>
-      </div>
-    )
-  }
 
   if (dcData?.success == true && data?.success == true) {
     return (
@@ -148,7 +143,7 @@ const User = () => {
               {/* Feature Card */}
               <div className="ytCard relative col-span-2 shadow-md rounded-lg overflow-hidden">
                 <Link href={data?.data?.cards?.feature?.link} passHref>
-                  <p class="whitespace-nowrap absolute right-3 top-3 rounded-full bg-purple-100 px-2.5 py-0.5 text-[10px] text-purple-700">
+                  <p className="whitespace-nowrap absolute right-3 top-3 rounded-full bg-purple-100 px-2.5 py-0.5 text-[10px] text-purple-700">
                     What&apos;s New
                   </p>
                   <Image src={data?.data?.cards?.feature?.image} alt='BG Image' width={400} height={200}></Image>
